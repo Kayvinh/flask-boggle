@@ -37,7 +37,8 @@ class WordList:
         >>> real_words.check_word("MEAL")
         True
 
-        # All caps word that is obviously not a word -> return false
+        >>> real_words.check_word("KERBLANHFA")
+        False
         """
 
 
