@@ -29,13 +29,15 @@ class WordList:
 
     def check_word(self, word):
         """Is word in word list?
-        
+
         >>> real_words = WordList("dictionary.txt")
         >>> real_words.check_word("meal")
         False
 
         >>> real_words.check_word("MEAL")
         True
+
+        # All caps word that is obviously not a word -> return false
         """
 
 
