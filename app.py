@@ -25,5 +25,14 @@ def new_game():
     game_id = str(uuid4())
     game = BoggleGame()
     games[game_id] = game
+    info = {"gameId": game_id, "board": game.board}
 
-    return {"gameId": "need-real-id", "board": "need-real-board"}
+
+    return jsonify(info)
+
+@app.post("/api/score-word")
+def score_word():
+    word = request.json["word"]
+    game_id = request.json["gameId"]
+    if games[game_id].word_list.check_word(word):
+        #return jsonify("result": "ok")
